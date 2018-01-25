@@ -20,6 +20,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12 align-self-center">
+                    <!--
                     <form>
                         <div class="form-group">
                             <label for="exampleInputCheck">Check</label>
@@ -46,6 +47,8 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
+                    -->
+                    <?php echo $data['form'] ?>
                 </div>
             </div>
         </div>

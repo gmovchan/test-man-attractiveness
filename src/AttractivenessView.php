@@ -29,11 +29,11 @@ class AttractivenessView
 
             $html .= '<div class="form-group">';
             $html .= '<label for="exampleInputCheck">' . $value['title'] . '</label>';
-            var_dump($value['title']);
+            //var_dump($value['title']);
 
             foreach ($value['properties'] as $property) {
 
-                var_dump($property);
+                //var_dump($property);
 
                 $html .= '
                     <div class="form-check">
@@ -50,9 +50,21 @@ class AttractivenessView
 
         $html .= '</form>';
 
-        print_r($html);
+        //print_r($html);
 
         return $html;
+    }
+    
+    public function generate($contentView, $templateView, $data = null)
+    {
+        //var_dump(__DIR__ . '/../' . $templateView);
+        require_once __DIR__ . '/../' . $templateView;
+    }
+    
+    // Защита от XSS уязвимостей. Вызывается в представлении с помощью $this->html('text');
+    public function html($text) {
+        // nl2br требуется чтобы сохранить перенос строк
+        return nl2br(htmlspecialchars($text, ENT_QUOTES));
     }
 
 }
