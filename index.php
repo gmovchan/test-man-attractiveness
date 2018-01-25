@@ -14,4 +14,4 @@ $attractivenessView = new AttractivenessView();
 
 $data = array();
 $data['form'] = $attractivenessView->getFormFromArray($attractivenessModel->getArrayFromJson('src/questions.json'));
-$attractivenessView->generate('', "testTemplate.php", $data);
+$attractivenessView->generate('', "formTemplate.php", $data);
