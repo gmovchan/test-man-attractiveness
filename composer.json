@@ -1,0 +1,16 @@
+{
+    "name": "vagrant/test-man-attractivness",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "twbs/bootstrap": "4.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Application\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
