@@ -20,38 +20,19 @@
             </div>
             <div class="row">
                 <div class="col-md-12 align-self-center">
-                    <!--
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleInputCheck">Check</label>
-                            <div class="form-check">
-
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                
-                            </div>
-                            <div class="form-check">
-
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputCheck">Check</label>
-                            <div class="form-check">
-
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                    -->
                     <?php echo $data['form'] ?>
                 </div>
             </div>
         </div>
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; 2017-2018 Company Name</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Support</a></li>
+            </ul>
+        </footer>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -2,7 +2,7 @@
 
 namespace Application;
 
-require __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 use Application\AttractivenessModel;
 use Application\AttractivenessView;
@@ -10,8 +10,9 @@ use Application\AttractivenessView;
 $attractivenessModel = new AttractivenessModel();
 $attractivenessView = new AttractivenessView();
 
-//var_dump($attractivenessView->getFormFromArray($attractivenessModel->getArrayFromJson('src/questions.json')));
-
 $data = array();
+/*
+ * Получает html код формы и передаёт его в щаблон.
+ */
 $data['form'] = $attractivenessView->getFormFromArray($attractivenessModel->getArrayFromJson('src/questions.json'));
 $attractivenessView->generate('', "formTemplate.php", $data);

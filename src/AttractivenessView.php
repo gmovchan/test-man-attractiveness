@@ -20,50 +20,62 @@ class AttractivenessView
     {
         
     }
-
+    
+    /**
+     * Генерирует из массива форму со списком вопросов.
+     * @param array $questionsArray
+     * @return string
+     */
     public function getFormFromArray(array $questionsArray)
     {
-        $html = '<form>';
+        $checkId = 0;
+        $html = '<form action="/handler.php" method="post">';
 
         foreach ($questionsArray as $key => $value) {
 
             $html .= '<div class="form-group">';
             $html .= '<label for="exampleInputCheck">' . $value['title'] . '</label>';
-            //var_dump($value['title']);
 
             foreach ($value['properties'] as $property) {
 
-                //var_dump($property);
-
                 $html .= '
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">'
+                        <input type="checkbox" class="form-check-input" name="check' . $checkId . '" id="check' . $checkId . '" value="1">
+                        <label class="form-check-label" for="check' . $checkId . '">'
                         . $property .
                         '</label>                             
                     </div>
                     ';
+
+                $checkId++;
             }
 
             $html .= '</div>';
         }
 
-        $html .= '</form>';
-
-        //print_r($html);
+        $html .= '      <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                ';
 
         return $html;
     }
-    
+
     public function generate($contentView, $templateView, $data = null)
     {
-        //var_dump(__DIR__ . '/../' . $templateView);
+
         require_once __DIR__ . '/../' . $templateView;
     }
-    
-    // Защита от XSS уязвимостей. Вызывается в представлении с помощью $this->html('text');
-    public function html($text) {
-        // nl2br требуется чтобы сохранить перенос строк
+
+    /**
+     * Защита от XSS уязвимостей. Вызывается в представлении с помощью $this->html('text');
+     * @param type $text
+     * @return type
+     */
+    public function html($text)
+    {
+        /*
+         * nl2br требуется чтобы сохранить перенос строк
+         */
         return nl2br(htmlspecialchars($text, ENT_QUOTES));
     }
 
