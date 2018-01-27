@@ -12,23 +12,24 @@
     </head>
     <body>
         <div class="container">
-            <div class="row pt-5">
+            <div class="row py-5">
                 <div class="col-md-12 align-self-center">
-                    <h3 class="text-center">Оцените свою привлекательность.</h3>
-                    <blockquote class="blockquote">
-                        <p class="mb-0">Привлекают ли нас личные качества? Не совсем так. Нас привлекает привлекательность. Например, младенцы больше времени смотрят на привлекательные лица, а не на непривлекательные. Люди часто отсаживаются от непривлекательных людей в общественном транспорте. Часто мы наделяем положительными качествами людей с привлекательной внешностью. Мы думаем, что они умнее, лучше, добрее. Вследствие чего такие люди более успешны по жизни, не логично ли?</p>
-                        <footer class="blockquote-footer">профессор психологии, PhD <cite title="Автор">Френк Коннер</cite></footer>
-                    </blockquote>
+                    <h3 class="text-center">Результат.</h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12 align-self-center">
-                    <?php echo $data['form'] ?>
+                <div class="col-md-12 align-self-center text-center">
+                    <p>
+                        Набрано <?php echo $data['ratio'] ?> баллов или <?php echo $data['percent'] ?>. Привлекательными считают людей, набравших минимум <?php echo $data['minAlphaPercent'] ?>%.
+                    </p>
+                    <p>
+                        <?php echo $data['result'] ?>
+                    </p>
                 </div>
             </div>
         </div>
 
-        <footer class="my-5 pt-5 text-muted text-center text-small">
+        <footer class="my-5 pt-5 text-muted text-center text-small fixed-bottom">
             <p class="mb-1">&copy; 2018</p>
             <ul class="list-inline">
                 <li class="list-inline-item"><a href="https://appealogy.livejournal.com/54577.html">Источник</a></li>

@@ -17,7 +17,7 @@ class AttractivenessModel
 {
 
     const TOTAL_POINTS = 42; // Максимальное количество баллов.
-    const MIN_ALPHA_POINTS = 31; // Минимальное количество балло чтобы считаться привлекательным.
+    const MIN_ALPHA_PERCENT = 65; // Минимальное количество балло чтобы считаться привлекательным.
 
     public function __construct()
     {
@@ -49,7 +49,7 @@ class AttractivenessModel
     
     public function getPercent(int $points)
     {
-        $percent = round(((self::TOTAL_POINTS / 100)*$points), 0);
+        $percent = round(((100 / self::TOTAL_POINTS)*$points), 0);
         return $percent . '%';
     }
     
@@ -65,17 +65,24 @@ class AttractivenessModel
      */
     public function getResultAttractiveness(int $points)
     {
+        $percent = $this->getPercent($points);
+        
         if ($points > self::TOTAL_POINTS) {
             return "Ошибка: превышено максимальное количество баллов.";
         }
 
-        if ($points > self::MIN_ALPHA_POINTS) {
-            return "Вы привлекательный.";
+        if ($percent > self::MIN_ALPHA_PERCENT) {
+            return "Вы привлекательный. Девушки рядом с вами берут инициативу в свои руки, конечно если вы неискренне заполняли тест.";
         }
 
-        if ($points < self::MIN_ALPHA_POINTS) {
-            return "Вы непривлекательный.";
+        if ($percent < self::MIN_ALPHA_PERCENT) {
+            return "Вы непривлекательный. Отношения не два вас. Не стоит стучаться в закрытую дверь, возможно вам лучше заняться чем-то другим, что не зависит от отношения окружающих к вашей внешности.";
         }
+    }
+    
+    public function getMinAlphaPercent()
+    {
+        return self::MIN_ALPHA_PERCENT;
     }
 
     /**

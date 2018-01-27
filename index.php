@@ -11,6 +11,7 @@ $attractivenessModel = new AttractivenessModel();
 $attractivenessView = new AttractivenessView();
 
 $data = array();
+
 /*
  * Получает html код формы и передаёт его в щаблон.
  */

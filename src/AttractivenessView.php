@@ -53,7 +53,7 @@ class AttractivenessView
             $html .= '</div>';
         }
 
-        $html .= '      <button type="submit" class="btn btn-primary">Submit</button>
+        $html .= '      <button type="submit" class="btn btn-primary">Подтвердить</button>
                     </form>
                 ';
 
