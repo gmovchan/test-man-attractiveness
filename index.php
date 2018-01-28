@@ -15,5 +15,6 @@ $data = array();
 /*
  * Получает html код формы и передаёт его в щаблон.
  */
+$data['title'] = 'Привлекательность.';
 $data['form'] = $attractivenessView->getFormFromArray($attractivenessModel->getArrayFromJson('src/questions.json'));
-$attractivenessView->generate('', "formTemplate.php", $data);
+$attractivenessView->generate('elements/testAttractiveness.php', 'views/layouts/indexTemplate.php', $data);
