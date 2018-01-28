@@ -29,7 +29,7 @@ var_dump($attractivenessModel->getRatio($poinst));
  * Можно сделать диаграмму привлекательности. Написать или показать сколько 
  * пунктов не хватает до привлекательности. Вывести список черт которые надо пофиксить.
  */
-$data['title'] = 'Результат.';
+$data['title'] = 'Результат';
 $data['minAlphaPercent'] = $attractivenessModel->getMinAlphaPercent();
 $data['ratio'] = $attractivenessModel->getRatio($poinst);
 $data['percent'] = $attractivenessModel->getPercent($poinst);
