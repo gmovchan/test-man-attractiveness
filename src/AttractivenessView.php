@@ -29,7 +29,7 @@ class AttractivenessView
     public function getFormFromArray(array $questionsArray)
     {
         $checkId = 0;
-        $html = '<form action="/src/handler.php" method="post">';
+        $html = '<form action="/?action=handle" method="post">';
 
         foreach ($questionsArray as $key => $value) {
 

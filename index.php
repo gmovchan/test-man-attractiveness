@@ -13,6 +13,24 @@ $attractivenessView = new AttractivenessView();
 $data = array();
 
 /*
+ * Примитивный роутер чтобы была одна точка входа.
+ */
+if (!is_null($action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING))) {
+
+    switch ($action) {
+        case 'handle':
+            
+            require_once 'src/handler.php';
+            exit();
+            
+            break;
+
+        default:
+            break;
+    }
+}
+
+/*
  * Получает html код формы и передаёт его в щаблон.
  */
 $data['title'] = 'Привлекательность';

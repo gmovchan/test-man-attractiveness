@@ -8,18 +8,22 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../../vendor/twbs/bootstrap/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+        <!-- Custom styles for this template -->
+        <link href="/views/layouts/css/sticky-footer.css" type="text/css" rel="stylesheet">
+
         <title><?php echo($data['title']); ?></title>
     </head>
     <body>
-        <div class="container">
+        <div class="container pb-5">
             <?php require_once __DIR__ . '/../' . $contentView; ?>
         </div>
 
-        <footer class="my-5 pt-5 text-muted text-center text-small">
-            <p class="mb-1">&copy; 2018</p>
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="https://appealogy.livejournal.com/54577.html">Источник</a></li>
-            </ul>
+        <footer class="footer text-center">
+            <div class="container">
+                <span class="text-muted">
+                    &copy; 2018 <a href="https://appealogy.livejournal.com/54577.html">Источник</a>
+                </span>
+            </div>
         </footer>
 
         <!-- Optional JavaScript -->

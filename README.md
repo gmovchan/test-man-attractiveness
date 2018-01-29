@@ -1,0 +1,1 @@
+Доступен по [ссылке](http://attract.bobylquote.ru)
